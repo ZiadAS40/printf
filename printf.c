@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#include "main.h"
 /**
  * _printf - imitaing printf form standard library.
  * @format: string.
@@ -11,43 +9,50 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, j = 0;
+	int i = 0, counter = 0;
 	char *string;
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] != '%')
+		if (format[i] == '%')
 		{
-			if (format[i - 1] != '%')
+			i++;
+			if (format[i] == 'c')
 			{
-				putchar (format[i]);
+				putchar(va_arg(args, int));
+				counter++;
+			} else if (format[i] == 's')
+			{
+				string = va_arg(args, char *);
+				if (string != NULL && isValidString(string))
+				{
+					while (*string != '\0')
+					{
+						putchar(*string);
+						string++;
+						counter++;
+					}
+				} else
+				{
+					return (-1);
+				}
+			} else if (format[i] == '%')
+			{
+				putchar('%');
+				counter++;
 			}
 		} else
 		{
-			switch (format[i + 1])
-			{
-				case 'c':
-					putchar (va_arg(args, int));
-					break;
-				case 's':
-					string = va_arg(args, char *);
-					while (string[j] != '\0')
-					{
-						putchar(string[j]);
-						j++;
-					}
-					break;
-				case '%':
-					putchar ('%');
-					break;
-			}
+			putchar(format[i]);
+			counter++;
 		}
 		i++;
 	}
-	if (format[i] == 'n' && format[i - 1] == '\\')
-	{
-		putchar('\n');
-	}
-	return (i);
+	va_end(args);
+	return (counter);
 }
