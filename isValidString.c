@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdbool.h>
+#include <stdlib.h>
 /**
  * isValidString - check the string.
  * @str: string.
