@@ -10,7 +10,8 @@ int handleString(va_list args)
 {
 char *str = va_arg(args, char *);
 int i = 0;
-if (str[i] != '\0')
+
+if (str != NULL)
 {
 while (str[i] != '\0')
 {

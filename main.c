@@ -1,16 +1,27 @@
 #include "main.h"
+/**
+ * main - test printf.
+ *
+ * Return: always 0
+*/
 int main(void)
 {
-int i , c, g;
-printf("This is a string");
-printf("%s\n", "I am a string too!");
-printf("Character:[%c]\n",'H');
-_printf("--------\n");
-g = _printf("%%");
-c = _printf("%k\n");
-i = _printf("Character:[%c] , [% ]\n",'H');
+int i, j;
+_printf("Hello, world!\n");
+_printf("Combine %s and %s\n", "string1", "string2");
+_printf("String: %s, Character: %c\n", "Hello", 'A');
+_printf("Percentage: %%\n");
+i = _printf("%s\n", "");
+j = _printf("%s\n", NULL);
+_printf("%c\n", '\0');
+_printf("100%% sure\n");
+_printf("Percent % here %\n");
+_printf("Incomplete format specifier %\n");
+_printf("Just a % with nothing\n");
+_printf(NULL);
+_printf("Non-printable: %s\n", "\x01\x02\x03");
+_printf("Line1\nLine2\nLine3\n");
 printf("%d\n", i);
-printf("%d\n", c);
-printf("%d\n", g);
+printf("%d\n", j);
 return (0);
 }

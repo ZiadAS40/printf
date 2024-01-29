@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * printf - custom printf
+ * _printf - custom printf
  * @format: string.
  *
  * Return: int .
@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 va_list args;
-int i = 0, counter = 0;
+int i = 0, counter = 0, re;
 
 va_start(args, format);
 if (format == NULL)
@@ -23,7 +23,15 @@ while (format[i] != '\0')
 if (format[i] == '%')
 {
 i++;
-counter += _handle_print(0, format, &i, args);
+re = _handle_print(0, format, &i, args);
+if (re)
+{
+counter += re;
+}
+else
+{
+return (-1);
+}
 }
 else
 {
@@ -47,6 +55,7 @@ int _handle_print(int count, const char *format, int *i, va_list args)
 {
 int (*result_func)(va_list);
 int result;
+
 result_func = get_func(format[*i]);
 if (format[*i] == '%')
 {
@@ -62,11 +71,18 @@ return (2);
 if (result_func != NULL)
 {
 result = result_func(args);
+if (result != 0)
+{
 count += result;
 }
 else
 {
-return (-1);
+return (0);
+}
+}
+else
+{
+return (0);
 }
 return (count);
 }
@@ -79,7 +95,7 @@ int _check_fmt(const char *fmt)
 {
 int i = strlen(fmt);
 int j = 0;
-while (fmt[0] != '\0')
+while (*fmt != '\0')
 {
 if (fmt[j] == '%')
 {
