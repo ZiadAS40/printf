@@ -8,17 +8,27 @@
 
 int handleString(va_list args)
 {
-char *str = va_arg(args, char *);
-int i = 0;
+char *str;
+int i = 0, len;
 
-if (str != NULL)
+str = va_arg(args, char *);
+if (str == NULL)
 {
-while (str[i] != '\0')
+str = "(null)";
+len = strlen(str);
+for (i = 0; i < len; i++)
 {
 _putchar(str[i]);
-i++;
 }
-return (i);
+return (len);
 }
-return (0);
+else
+{
+len = strlen(str);
+for (i = 0; i < len; i++)
+{
+putchar(str[i]);
+}
+return (len);
+}
 }

@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 va_list args;
-int i = 0, counter = 0, re;
+int i = 0, counter = 0;
 
 va_start(args, format);
 if (format == NULL)
@@ -23,15 +23,7 @@ while (format[i] != '\0')
 if (format[i] == '%')
 {
 i++;
-re = _handle_print(0, format, &i, args);
-if (re)
-{
-counter += re;
-}
-else
-{
-return (-1);
-}
+counter += _handle_print(0, format, &i, args);
 }
 else
 {
@@ -71,14 +63,7 @@ return (2);
 if (result_func != NULL)
 {
 result = result_func(args);
-if (result != 0)
-{
 count += result;
-}
-else
-{
-return (0);
-}
 }
 else
 {

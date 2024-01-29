@@ -15,7 +15,7 @@ if (s == ' ' || s == '\0')
 {
 return (NULL);
 }
-while (i < 3)
+while (i < 2)
 {
 if (ar[i].sp == s)
 {
