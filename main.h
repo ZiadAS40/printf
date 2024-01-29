@@ -1,9 +1,34 @@
+
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <unistd.h>
+#include <string.h>
+/**
+ * fmt - structure
+ * @sp: char.
+ * @f: function.
+ * Discreption: structure conains the specifier and the handle function.
+*/
+typedef struct sp_func_struct
+{
+    char sp;
+    int (*f)(va_list);
+} fmt ;
+
+
+
+/*
+ * functions prototype
+*/
 int _printf(const char *format, ...);
-bool isValidString(char *str);
+int _putchar(char);
+int (*(get_func(char)))(va_list);
+int handleString(va_list);
+int handleCharacter(va_list);
+int _handle_print(int,const char *,int *,va_list);
+int _check_fmt(const char *fmt);
 #endif
