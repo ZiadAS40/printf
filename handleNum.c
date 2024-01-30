@@ -8,8 +8,9 @@
 
 int handleNum(va_list args)
 {
-int num = va_arg(args, int);
-int counter = 0, divisor = 1, temp, digit;
+long num = va_arg(args, int);
+int counter = 0, temp, digit;
+long divisor = 1;
 
 temp = num;
 if (num == 0)

@@ -71,19 +71,16 @@ return (count);
 */
 int _check_fmt(const char *fmt)
 {
-int i = strlen(fmt);
 int j = 0;
-while (fmt[0] != '\0')
+while (fmt[j] != '\0')
 {
 if (fmt[j] == '%')
 {
 j++;
-if (fmt[j] == ' ')
-return (0);
-if (fmt[j] == '\0' && j != i - 1)
+if (fmt[j] == '\0' || fmt[j] == ' ')
 return (0);
 }
-fmt++;
+j++;
 }
 return (1);
 }
