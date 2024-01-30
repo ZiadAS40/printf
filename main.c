@@ -6,20 +6,24 @@
 */
 int main(void)
 {
-int i, j;
-_printf("Hello, world!\n");
+    int i , j ;
+ i = _printf("Hello, world!\n");
+ j = _printf("Hello, world!\n");
 _printf("Combine %s and %s\n", "string1", "string2");
 _printf("String: %s, Character: %c\n", "Hello", 'A');
 _printf("Percentage: %%\n");
-i = _printf("%s\n", "");
-j = _printf("%s\n", NULL);
+_printf("%s\n", "");
+printf("%s\n", "");
+_printf("%s\n", NULL);
 _printf("%c\n", '\0');
+printf("%c\n", '\0');
 _printf("100%% sure\n");
 _printf("Percent % here %\n");
 _printf("Incomplete format specifier %\n");
 _printf("Just a % with nothing\n");
 _printf(NULL);
 _printf("Non-printable: %s\n", "\x01\x02\x03");
+printf("Non-printable: %s\n", "\x01\x02\x03");
 _printf("Line1\nLine2\nLine3\n");
 printf("%d\n", i);
 printf("%d\n", j);

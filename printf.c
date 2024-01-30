@@ -33,7 +33,7 @@ counter++;
 i++;
 }
 va_end(args);
-return (counter);
+return (counter ? counter : (-1));
 }
 /**
  * _handle_print - handle printing
@@ -67,7 +67,7 @@ count += result;
 }
 else
 {
-return (0);
+return (-1);
 }
 return (count);
 }
@@ -80,7 +80,7 @@ int _check_fmt(const char *fmt)
 {
 int i = strlen(fmt);
 int j = 0;
-while (*fmt != '\0')
+while (fmt[0] != '\0')
 {
 if (fmt[j] == '%')
 {
