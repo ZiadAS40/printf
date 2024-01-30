@@ -54,21 +54,14 @@ if (format[*i] == '%')
 _putchar('%');
 return (1);
 }
-if (format[*i] != 's' && format[*i] != 'c' && format[*i] != '%')
+if (result_func == NULL)
 {
 _putchar('%');
 _putchar(format[*i]);
 return (2);
 }
-if (result_func != NULL)
-{
 result = result_func(args);
 count += result;
-}
-else
-{
-return (-1);
-}
 return (count);
 }
 /**

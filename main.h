@@ -29,6 +29,7 @@ int _putchar(char);
 int (*(get_func(char)))(va_list);
 int handleString(va_list);
 int handleCharacter(va_list);
+int handleNum(va_list);
 int _handle_print(int,const char *,int *,va_list);
 int _check_fmt(const char *fmt);
 #endif

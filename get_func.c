@@ -9,13 +9,15 @@ int (*get_func(char s))(va_list)
 int i = 0;
 fmt ar[] = {
 {'s', handleString},
-{'c', handleCharacter}
+{'c', handleCharacter},
+{'i', handleNum},
+{'d', handleNum}
 };
 if (s == ' ' || s == '\0')
 {
 return (NULL);
 }
-while (i < 2)
+while (i < 4)
 {
 if (ar[i].sp == s)
 {
