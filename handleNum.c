@@ -54,7 +54,6 @@ int power = sizeof(unsigned int) * 8 - 1, counter = 0, flag = 0;
 if (num == 0)
 {
 _putchar('0');
-_putchar('0');
 return (1);
 }
 while (power >= 0)
@@ -74,7 +73,7 @@ counter++;
 }
 power--;
 }
-return (counter > 0 ? counter - 1 : 0);
+return (counter > 0 ? counter : 0);
 }
 
 /**
