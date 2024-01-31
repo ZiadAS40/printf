@@ -7,6 +7,9 @@
 int handleCharacter(va_list args)
 {
 int ch = va_arg(args, int);
+
+if (ch == '\0')
+return (-1);
 if (ch != 0)
 {
 _putchar(ch);

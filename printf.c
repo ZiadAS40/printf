@@ -23,6 +23,8 @@ while (format[i] != '\0')
 if (format[i] == '%')
 {
 i++;
+if (format[i] == ' ' || format[i] == '\0')
+return (-1);
 counter += _handle_print(0, format, &i, args);
 }
 else
@@ -33,7 +35,7 @@ counter++;
 i++;
 }
 va_end(args);
-return (counter ? counter : (-1));
+return (counter);
 }
 /**
  * _handle_print - handle printing
@@ -71,16 +73,21 @@ return (count);
 */
 int _check_fmt(const char *fmt)
 {
+int i = strlen(fmt);
 int j = 0;
+
 while (fmt[j] != '\0')
 {
 if (fmt[j] == '%')
 {
 j++;
-if (fmt[j] == '\0' || fmt[j] == ' ')
+if (fmt[j] == '\0' && j != i - 1)
+return (0);
+if (fmt[j] == ' ')
 return (0);
 }
 j++;
 }
 return (1);
 }
+

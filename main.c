@@ -7,7 +7,7 @@
 int main(void)
 {
   int i , j ;
- i = _printf("",'s');
+ i = _printf("%c",'\0');
  j = _printf("Hello, % orld!\n");
 _printf("Combine %s and %s\n", "string1", "string2");
 _printf("String: %s, Character: %c\n", "Hello", 'A');

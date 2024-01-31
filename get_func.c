@@ -13,10 +13,6 @@ fmt ar[] = {
 {'i', handleNum},
 {'d', handleNum}
 };
-if (s == ' ' || s == '\0')
-{
-return (NULL);
-}
 while (i < 4)
 {
 if (ar[i].sp == s)

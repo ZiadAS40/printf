@@ -8,16 +8,16 @@
 #include <unistd.h>
 #include <string.h>
 /**
- * fmt - structure
+ * struct sp_func_struct - typedef structure.
+ *
  * @sp: char.
  * @f: function.
- * Discreption: structure conains the specifier and the handle function.
-*/
+**/
 typedef struct sp_func_struct
 {
-    char sp;
-    int (*f)(va_list);
-} fmt ;
+char sp;
+int (*f)(va_list);
+} fmt;
 
 
 
@@ -30,6 +30,6 @@ int (*(get_func(char)))(va_list);
 int handleString(va_list);
 int handleCharacter(va_list);
 int handleNum(va_list);
-int _handle_print(int,const char *,int *,va_list);
+int _handle_print(int, const char *, int *, va_list);
 int _check_fmt(const char *fmt);
 #endif
