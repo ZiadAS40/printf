@@ -33,7 +33,7 @@ counter++;
 i++;
 }
 va_end(args);
-return (counter);
+return (counter ? counter : (-1));
 }
 /**
  * _handle_print - handle printing
