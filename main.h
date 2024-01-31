@@ -7,6 +7,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include <string.h>
+#include <limits.h>
 /**
  * struct sp_func_struct - typedef structure.
  *
@@ -30,6 +31,8 @@ int (*(get_func(char)))(va_list);
 int handleString(va_list);
 int handleCharacter(va_list);
 int handleNum(va_list);
+int handleBinary(va_list);
 int _handle_print(int, const char *, int *, va_list);
 int _check_fmt(const char *fmt);
+long _pow(int n1, int n2);
 #endif

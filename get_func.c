@@ -11,9 +11,10 @@ fmt ar[] = {
 {'s', handleString},
 {'c', handleCharacter},
 {'i', handleNum},
-{'d', handleNum}
+{'d', handleNum},
+{'b', handleBinary}
 };
-while (i < 4)
+while (i < 5)
 {
 if (ar[i].sp == s)
 {
