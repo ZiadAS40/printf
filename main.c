@@ -6,9 +6,12 @@
 */
 int main(void)
 {
-  int i , j ;
- i = _printf("%b\n",0);
- j = _printf("Hello, % orld!\n");
+  int i , j, k, b;
+ i = _printf("%X\n", 394);
+ j = _printf("%x\n", 394);
+ k = _printf("%o\n", 394);
+ b = _printf("%u\n", 394);
+ 
 _printf("Combine %s and %s\n", "string1", "string2");
 _printf("String: %s, Character: %c\n", "Hello", 'A');
 _printf("Percentage: %%\n");
@@ -28,5 +31,7 @@ _printf("Line1\nLine2\nLine3\n");
 _printf("%d%k%i%e\n", 234,424);
 printf("%d\n", i);
 printf("%d\n", j);
+printf("%d\n", k);
+printf("%d\n", b);
 return (0);
 }

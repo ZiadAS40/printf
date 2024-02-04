@@ -12,9 +12,13 @@ fmt ar[] = {
 {'c', handleCharacter},
 {'i', handleNum},
 {'d', handleNum},
-{'b', handleBinary}
+{'b', handleBinary},
+{'u', handleUnsigned},
+{'o', handleOct},
+{'X', handleHex},
+{'x', handlehex}
 };
-while (i < 5)
+while (i < 9)
 {
 if (ar[i].sp == s)
 {
