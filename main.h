@@ -28,6 +28,7 @@ int (*f)(va_list);
 */
 int _printf(const char *format, ...);
 int _putchar(char);
+int buffer(char c);
 int (*(get_func(char)))(va_list);
 int handleString(va_list);
 int handleCharacter(va_list);

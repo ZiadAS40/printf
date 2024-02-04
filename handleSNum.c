@@ -53,18 +53,17 @@ int i = 0, j;
 
 if (num == 0)
 {
-putchar('0');
+_putchar('0');
 return (1);
 }
 while (num > 0)
 {
-octalNum[i] = num % 8;
+octalNum[i++] = num % 8;
 num /= 8;
-i++;
 }
 for (j = i - 1; j >= 0; j--)
 {
-putchar(octalNum[j] + '0');
+_putchar(octalNum[j] + '0');
 }
 return (i);
 }
